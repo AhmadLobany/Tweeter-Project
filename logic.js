@@ -10,6 +10,7 @@ const Tweeter = function () {
     }
 
     const addPost = function (text) {
+        if(text!="") {
         postIdCounter++
         const newPost = {
             id: "p" + postIdCounter,
@@ -17,6 +18,7 @@ const Tweeter = function () {
             comments: [] 
         }
         _posts.push(newPost)
+    }
     }
 
     const removePost = function (postID) {
@@ -30,6 +32,7 @@ const Tweeter = function () {
     }
 
     const addComment = function (text,postID) {
+        if(text!="") {
         commentIdCounter++
         let newComment = {
             text:text,
@@ -40,6 +43,7 @@ const Tweeter = function () {
                 post.comments.push(newComment)
             }
         }
+    }
     }
 
     const removeComment = function (postID,commentID) {
